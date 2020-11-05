@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "cc9583d6-b3ad-4db1-8498-f554f03488c5",
+		"name": "SimpleBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Microservice Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "03a266c2-a608-4f77-9809-c71760d85763",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check access_token\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.access_token).not.equal(null)\r",
+							"    pm.environment.set(\"jwttoken\", jsonData.access_token);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "secret_client_id",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "article.read article.write manage",
+							"type": "text"
+						},
+						{
+							"key": "aud",
+							"value": "simpleblogapi",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5bc21463-d11e-40e0-88a7-df249fc04ddc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"ArticleId\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.articles[0].articleId).not.to.eql('');\r",
+							"    pm.environment.set(\"ArticleId\", jsonData.articles[0].articleId);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v1/Articles",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"Articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v1/Articles/{{ArticleId}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"Articles",
+						"{{ArticleId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aec35cb1-027a-4332-a376-75fbeceae864",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Article Id is not Empty\", function () {    \r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.article.articleId).not.eql('');\r",
+							"    pm.environment.set(\"ArticleId\", jsonData.article.articleId);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "body",
+							"value": "body",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "summary",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "title",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/Articles",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"Articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aec35cb1-027a-4332-a376-75fbeceae864",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "This is my comment on this article",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/Comments/{{ArticleId}}/Comment",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"Comments",
+						"{{ArticleId}}",
+						"Comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like Article",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aec35cb1-027a-4332-a376-75fbeceae864",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/Likes/{{ArticleId}}/Like",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"Likes",
+						"{{ArticleId}}",
+						"Like"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ed4a86e8-a19e-4695-b6c3-3d8c84b3d6ca",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "09fe544c-979d-41ce-ae5a-0760dbbd5095",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "87cbe42d-6dd9-4746-b795-fb7bd1679108",
+			"key": "API_URL",
+			"value": "https://localhost:44360/api"
+		},
+		{
+			"id": "8fd41161-aff3-4348-8821-d911e0dfbc6e",
+			"key": "jwtoken",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}

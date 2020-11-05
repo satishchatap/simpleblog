@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="UseCases\Article\.GetAllArticles\GetAllArticlePresenter.cs" />
+    <Compile Include="UseCases\Article\.GetAllArticles\GetAllArticlesUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetAllArticles\IGetAllArticlesUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetAllArticles\IOutputPort.cs" />
+    <Compile Include="UseCases\Article\.GetArticles\GetArticlePresenter.cs" />
+    <Compile Include="UseCases\Article\.GetArticles\GetArticlesUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetArticles\IGetArticlesUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetArticles\IOutputPort.cs" />
+    <Compile Include="UseCases\Article\.GetArticle\GetArticlePresenter.cs" />
+    <Compile Include="UseCases\Article\.GetArticle\GetArticleUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetArticle\GetArticleValidationUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetArticle\IGetArticleUseCase.cs" />
+    <Compile Include="UseCases\Article\.GetArticle\IOutputPort.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+﻿@using System.Diagnostics
+
+@{ var version = FileVersionInfo.GetVersionInfo(typeof(IdentityServer4.Hosting.IdentityServerMiddleware).Assembly.Location).ProductVersion.Split('+').First(); }
+
+<div class="welcome-page">
+    <h1>
+      
+        Welcome to IdentityServer
+        <small class="text-muted">(version @version)</small>
+    </h1>
+
+    <ul>
+        <li>
+            Click <a href="~/diagnostics">here</a> to see the claims for your current session.
+        </li>
+        <li>
+            Click <a href="~/grants">here</a> to manage your stored grants.
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Models.ArticleModel">
+            <summary>
+                Article Details.
+            </summary>
+        </member>
+        <member name="M:WebApi.Models.ArticleModel.#ctor(Domain.Article)">
+            <summary>
+                Article Details constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.ArticleId">
+            <summary>
+                Gets article ID.
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Summary">
+            <summary>
+            Summary
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Body">
+            <summary>
+            Body
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Author">
+            <summary>
+            Author
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.PublishedDate">
+            <summary>
+            Published Date
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Comments">
+            <summary>
+                Gets Comments.
+            </summary>        
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.Likes">
+            <summary>
+                Gets Likes.
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.LikeCount">
+            <summary>
+            Total Likes
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.ArticleModel.CommentCount">
+            <summary>
+            Total Comments
+            </summary>
+        </member>
+        <member name="T:WebApi.Models.CommentModel">
+            <summary>
+            Comment Model
+            </summary>
+        </member>
+        <member name="M:WebApi.Models.CommentModel.#ctor(Domain.Comment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="comment"></param>
+        </member>
+        <member name="P:WebApi.Models.CommentModel.CommentId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.CommentModel.Author">
+            <summary>
+            Author
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.CommentModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.CommentModel.ArticleId">
+            <summary>
+            ArticleId
+            </summary>
+        </member>
+        <member name="T:WebApi.Models.LikeModel">
+            <summary>
+            Like Model
+            </summary>
+        </member>
+        <member name="M:WebApi.Models.LikeModel.#ctor(Domain.Like)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="like"></param>
+        </member>
+        <member name="P:WebApi.Models.LikeModel.LikeId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.LikeModel.Author">
+            <summary>
+            Author
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.LikeModel.ArticleId">
+            <summary>
+            Article Id
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.AuthenticationExtensions">
+            <summary>
+                Authentication Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.AuthenticationExtensions.AddAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Add Authentication Extensions.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.CustomApiConventions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Create(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Delete(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Edit(System.Object,System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Find(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Get(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.List(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Post(System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Patch(System.Object,System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomApiConventions.Update(System.Object,System.Object)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.CustomControllersExtensions">
+            <summary>
+                Custom Controller Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomControllersExtensions.AddCustomControllers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add Custom Controller dependencies.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.CustomCorsExtensions">
+            <summary>
+                CORS Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomCorsExtensions.AddCustomCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add CORS.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.CustomCorsExtensions.UseCustomCors(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+                Use CORS.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.DataProtectionExtensions">
+            <summary>
+                Data Protection Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.DataProtectionExtensions.AddCustomDataProtection(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add Data Protection.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.ExceptionFilter">
+            <summary>
+                Exception Filter.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+                Add Problem Details when occurs Domain Exception.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.FeatureFlags.CustomControllerFeatureProvider">
+            <summary>
+                Custom Controller Feature Provider.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.FeatureFlags.CustomControllerFeatureProvider.#ctor(Microsoft.FeatureManagement.IFeatureManager)">
+            <summary>
+                Custom Controller Feature Provider constructor.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.FeatureFlags.CustomControllerFeatureProvider.PopulateFeature(System.Collections.Generic.IEnumerable{Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPart},Microsoft.AspNetCore.Mvc.Controllers.ControllerFeature)">
+            <summary>
+                Populate Features.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.FeatureFlags.CustomFeature">
+            <summary>
+                Features Flags Enum.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.CreateArticle">
+            <summary>
+            Article
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.ArticleLikeCount">
+            <summary>
+                Article Likes.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.ArticleCommentCount">
+            <summary>
+                Article Comments.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.CommentArticle">
+            <summary>
+                Add Comment
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.LikeArticle">
+            <summary>
+                Like Article.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.GetArticle">
+            <summary>
+                Get Article.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.GetArticles">
+            <summary>
+                Get Articles.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.ErrorFilter">
+            <summary>
+                Filter errors out.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.Swagger">
+            <summary>
+                Use Swagger.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.SQLServer">
+            <summary>
+                Use SQL Server Persistence.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.Authentication">
+            <summary>
+                Use authentication.
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.EditArticle">
+            <summary>
+                Edit Article
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.DeleteArticle">
+            <summary>
+                Delete Article
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.GetAllArticles">
+            <summary>
+            Get All Articles
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.FeatureFlags.FeatureFlagsExtensions">
+            <summary>
+                Feature Flags Extension.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.FeatureFlags.FeatureFlagsExtensions.AddFeatureFlags(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Add Feature Flags dependencies.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.HttpMetricsExtensions">
+            <summary>
+                Http Metrics Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.HttpMetricsExtensions.UseCustomHttpMetrics(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+                Add Prometheus dependencies.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.LoggingExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.LoggingExtensions.AddInvalidRequestLogging(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Modules.Common.ReverseProxyExtensions">
+            <summary>
+                Reverse Proxy Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.ReverseProxyExtensions.AddProxy(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add Proxy.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.ReverseProxyExtensions.UseProxy(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Use Proxy.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.Swagger.ConfigureSwaggerOptions">
+            <summary>
+                Configures the Swagger generation options.
+            </summary>
+            <remarks>
+                This allows API versioning to define a Swagger document per API version after the
+                <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider" /> service has been resolved from the service container.
+            </remarks>
+        </member>
+        <member name="M:WebApi.Modules.Common.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+                Initializes a new instance of the <see cref="T:WebApi.Modules.Common.Swagger.ConfigureSwaggerOptions" /> class.
+            </summary>
+            <param name="provider">
+                The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger
+                documents.
+            </param>
+        </member>
+        <member name="M:WebApi.Modules.Common.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApi.Modules.Common.Swagger.SwaggerExtensions">
+            <summary>
+                Swagger Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.Swagger.SwaggerExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add Swagger Configuration dependencies.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.Swagger.SwaggerExtensions.UseVersionedSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+                Add Swagger dependencies.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.Common.TestAuthenticationHandler">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.TestAuthenticationHandler.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions},Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock)">
+            <summary>
+            </summary>
+            <param name="options"></param>
+            <param name="logger"></param>
+            <param name="encoder"></param>
+            <param name="clock"></param>
+        </member>
+        <member name="M:WebApi.Modules.Common.TestAuthenticationHandler.HandleAuthenticateAsync">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Modules.Common.VersioningExtensions">
+            <summary>
+                Versioning Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.VersioningExtensions.AddVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Method that adds versioning to the api.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.HealthChecksExtensions">
+            <summary>
+                HealthChecks Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.HealthChecksExtensions.AddHealthChecks(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Add Health Checks dependencies varying on configuration.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.HealthChecksExtensions.UseHealthChecks(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+                Use Health Checks dependencies.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.SQLServerExtensions">
+            <summary>
+                Persistence Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.SQLServerExtensions.AddSQLServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Add Persistence dependencies varying on configuration.
+            </summary>
+        </member>
+        <member name="T:WebApi.Modules.UseCasesExtensions">
+            <summary>
+                Adds Use Cases classes.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.UseCasesExtensions.AddUseCases(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Adds Use Cases to the ServiceCollection.
+            </summary>
+            <param name="services">Service Collection.</param>
+            <returns>The modified instance.</returns>
+        </member>
+        <member name="T:WebApi.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:WebApi.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            host Builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Startup">
+            <summary>
+                Startup.
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Startup constructor.
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Configure dependencies from application.
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+                Configure http request pipeline.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.CreateArticle.ArticlesController">
+            <summary>
+            Articles
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.CreateArticle.ArticlesController.#ctor(Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.CreateArticle.ArticlesController.Post(Application.UseCases.CreateArticle.ICreateArticleUseCase,System.String,System.String,System.String)">
+            <summary>
+                Create an article.
+            </summary>
+            <response code="200">Article already exists,</response>
+            <response code="201">The article was created successfully.</response>
+            <response code="400">Bad request.</response>
+            <param name="useCase">Use case.</param>
+            <param name="title"></param>
+            <param name="summary"></param>
+            <param name="body"></param>
+            <returns>The newly created article.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.CreateArticle.CreateArticleResponse">
+            <summary>
+            Response for Create 
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.CreateArticle.CreateArticleResponse.Article">
+            <summary>
+            Article
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.CreateArticle.CreateArticleResponse.#ctor(WebApi.Models.ArticleModel)">
+            <summary>
+            Response for Create Constuctor
+            </summary>
+            <param name="articleModel"></param>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.DeleteArticle.ArticlesController">
+            <summary>
+            Articles 
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.DeleteArticle.ArticlesController.#ctor(Application.UseCases.DeleteArticle.IDeleteArticleUseCase,Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="useCase"></param>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.DeleteArticle.ArticlesController.Delete(System.Guid)">
+            <summary>
+                Delete an Article.
+            </summary>
+            <response code="200">The closed article id.</response>
+            <response code="400">Bad request.</response>
+            <response code="404">Not Found.</response>
+            <param name="articleId">The ArticleId.</param>
+            <returns>ViewModel.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.DeleteArticle.DeleteArticleResponse">
+            <summary>
+            Delete Article Response
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.DeleteArticle.DeleteArticleResponse.#ctor(Domain.Article)">
+            <summary>
+                Delete Article Response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.DeleteArticle.DeleteArticleResponse.ArticleId">
+            <summary>
+                Gets account ID.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.EditArticle.ArticlesController">
+            <summary>
+            Articles
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.EditArticle.ArticlesController.#ctor(Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.EditArticle.ArticlesController.Patch(System.Guid,Application.UseCases.EditArticle.IEditArticleUseCase,System.String,System.String,System.String)">
+            <summary>
+                Edit an article.
+            </summary>
+            <response code="200">Article already exists,</response>
+            <response code="201">The article was created successfully.</response>
+            <response code="400">Bad request.</response>
+            <param name="articleId">article id.</param>
+            <param name="useCase">Use case.</param>
+            <param name="title"></param>
+            <param name="summary"></param>
+            <param name="body"></param>
+            <returns>The newly created article.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.EditArticle.EditArticleResponse">
+            <summary>
+            Response for Edit 
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.EditArticle.EditArticleResponse.Article">
+            <summary>
+            Article
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.EditArticle.EditArticleResponse.#ctor(WebApi.Models.ArticleModel)">
+            <summary>
+            Response for Edit Constuctor
+            </summary>
+            <param name="articleModel"></param>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetAllArticles.ArticlesController">
+            <summary>
+            Articles
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetAllArticles.ArticlesController.#ctor(Application.Services.Validation,Application.UseCases.GetAllArticles.IGetAllArticlesUseCase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+            <param name="useCase"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetAllArticles.ArticlesController.Get">
+            <summary>
+                Get Articles.
+            </summary>
+            <response code="200">The List of Articles.</response>
+            <response code="404">Not Found.</response>
+            <returns>An asynchronous <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult" />.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetAllArticles.GetAllArticlesResponse">
+            <summary>
+                Get Articles Response.
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetAllArticles.GetAllArticlesResponse.#ctor(System.Collections.Generic.IEnumerable{Domain.Article})">
+            <summary>
+                The Get Articles Response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.GetAllArticles.GetAllArticlesResponse.Articles">
+            <summary>
+                Articles
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetArticles.ArticlesController">
+            <summary>
+            Articles
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticles.ArticlesController.#ctor(Application.Services.Validation,Application.UseCases.GetArticles.IGetArticlesUseCase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+            <param name="useCase"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticles.ArticlesController.Get">
+            <summary>
+                Get Articles.
+            </summary>
+            <response code="200">The List of Articles.</response>
+            <response code="404">Not Found.</response>
+            <returns>An asynchronous <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult" />.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetArticles.GetArticlesResponse">
+            <summary>
+                Get Articles Response.
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticles.GetArticlesResponse.#ctor(System.Collections.Generic.IEnumerable{Domain.Article})">
+            <summary>
+                The Get Articles Response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.GetArticles.GetArticlesResponse.Articles">
+            <summary>
+                Articles
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetArticle.ArticlesController">
+            <summary>
+            Articles
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticle.ArticlesController.#ctor(Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticle.ArticlesController.Get(Application.UseCases.GetArticle.IGetArticleUseCase,System.Guid)">
+            <summary>
+                Get an article details.
+            </summary>
+            <response code="200">The Article.</response>
+            <response code="404">Not Found.</response>
+            <param name="useCase">Use case.</param>
+            <param name="articleId"></param>
+            <returns>An asynchronous <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult" />.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.Articles.V1.GetArticle.GetArticleResponse">
+            <summary>
+                Get Article Response.
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Articles.V1.GetArticle.GetArticleResponse.#ctor(Domain.Article)">
+            <summary>
+                The Get Article Response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Articles.V1.GetArticle.GetArticleResponse.Article">
+            <summary>
+                Gets article ID.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Comments.V1.CommentResponse">
+            <summary>
+                The response for a successful Comment.
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Comments.V1.CommentResponse.#ctor(WebApi.Models.CommentModel)">
+            <summary>
+                The Comment response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Comments.V1.CommentResponse.Comment">
+            <summary>
+                Gets Comment.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Comments.V1.CommentsController">
+            <summary>
+            Comments
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Comments.V1.CommentsController.#ctor(Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Comments.V1.CommentsController.Comment(Application.UseCases.ArticleComment.ICommentUseCase,System.Guid,System.String)">
+            <summary>
+                Comment on an article.
+            </summary>
+            <response code="200">The comment details.</response>
+            <response code="400">Bad request.</response>
+            <response code="404">Not Found.</response>
+            <param name="useCase">Use case.</param>
+            <param name="articleId">Article Id.</param>
+            <param name="description">description.</param>
+            <returns>The Comment.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.CustomErrors.V1.CustomErrorController">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.CustomErrors.V1.CustomErrorController.CustomError">
+            <summary>
+                Get an custom error.
+            </summary>
+            <returns>The custom error model.</returns>
+        </member>
+        <member name="T:WebApi.UseCases.CustomErrors.V1.CustomErrorResponse">
+            <summary>
+                Custom Error Response
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.CustomErrors.V1.CustomErrorResponse.RequestId">
+            <summary>
+                Gets Request Id.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.CustomErrors.V1.CustomErrorResponse.ShowRequestId">
+            <summary>
+                Verify if RequestId is null or empty.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Likes.V1.LikeResponse">
+            <summary>
+                The response for a successful Like.
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Likes.V1.LikeResponse.#ctor(WebApi.Models.LikeModel)">
+            <summary>
+                The Like response constructor.
+            </summary>
+        </member>
+        <member name="P:WebApi.UseCases.Likes.V1.LikeResponse.Like">
+            <summary>
+                Gets Like.
+            </summary>
+        </member>
+        <member name="T:WebApi.UseCases.Likes.V1.LikesController">
+            <summary>
+            Likes
+            </summary>
+        </member>
+        <member name="M:WebApi.UseCases.Likes.V1.LikesController.#ctor(Application.Services.Validation)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validation"></param>
+        </member>
+        <member name="M:WebApi.UseCases.Likes.V1.LikesController.Like(Application.UseCases.ArticleLike.ILikeUseCase,System.Guid)">
+            <summary>
+                Like on an article.
+            </summary>
+            <response code="200">The like details.</response>
+            <response code="400">Bad request.</response>
+            <response code="404">Not Found.</response>
+            <param name="useCase">Use case.</param>
+            <param name="articleId">Article Id.</param>
+            <returns>The Like.</returns>
+        </member>
+    </members>
+</doc>
