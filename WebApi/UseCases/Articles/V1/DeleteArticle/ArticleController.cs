@@ -57,7 +57,7 @@ namespace WebApi.UseCases.Articles.V1.DeleteArticle
         /// <response code="404">Not Found.</response>
         /// <param name="articleId">The ArticleId.</param>
         /// <returns>ViewModel.</returns>
-        [Authorize]
+        [Authorize(Policy = "FullAccess")]
         [HttpDelete("{articleId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DeleteArticleResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.Delete))]

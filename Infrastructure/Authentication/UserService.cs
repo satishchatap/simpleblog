@@ -28,13 +28,22 @@
         }
         public string[] GetCurrentUserPermissions()
         {
-            ClaimsPrincipal user = this._httpContextAccessor
-                .HttpContext
-                .User;
+            var permissionArray = new string[] { };
+            try
+            {
+                ClaimsPrincipal user = this._httpContextAccessor
+                    .HttpContext
+                    .User;
 
-            string aud = user.FindFirst("aud")?.Value!;
-            var permissions=user.FindAll("scope").Where(s => s.Value.StartsWith(aud)).Select(a=>a.Value);
-            return permissions!.ToArray();
+                string aud = user.FindFirst("aud")?.Value!;
+                var permissions = user.FindAll("scope").Where(s => s.Value.StartsWith(aud)).Select(a => a.Value.Replace($"{aud}.",""));
+                permissionArray = permissions!.ToArray();
+            }
+            catch
+            {
+                ///TODO: Log
+            }
+            return permissionArray;
         }
     }
 }

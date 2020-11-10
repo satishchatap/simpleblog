@@ -58,7 +58,7 @@
         /// <param name="summary"></param>
         /// <param name="body"></param>
         /// <returns>The newly created article.</returns>
-        [Authorize]
+        [Authorize(Policy = "FullAccess")]
         [HttpPatch("{articleId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EditArticleResponse))]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(EditArticleResponse))]

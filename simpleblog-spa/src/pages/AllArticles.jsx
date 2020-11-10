@@ -28,8 +28,8 @@ class AllArticles extends React.Component {
         articlesService
           .getAllArticles(user)
           .then((response) => {
+            console.log(response);
             this.setState(response.data);
-            console.log(response.data);
           })
           .catch((e) => {
             console.log(e);

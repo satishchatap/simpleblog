@@ -15,7 +15,7 @@ const config = {
     client_id: "bsra",
     redirect_uri: process.env.REACT_APP_REDIRECT_URI,
     response_type: "code",
-    scope: "openid profile api1.full_access",
+    scope: "openid profile api1.full_access api1.read_only",
     post_logout_redirect_uri: process.env.REACT_APP_POST_LOGOUT_REDIRECT_URI,
 };
 

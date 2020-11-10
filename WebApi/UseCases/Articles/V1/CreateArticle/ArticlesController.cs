@@ -56,7 +56,7 @@
         /// <param name="summary"></param>
         /// <param name="body"></param>
         /// <returns>The newly created article.</returns>
-        [Authorize]
+        [Authorize(Policy = "FullAccess")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateArticleResponse))]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CreateArticleResponse))]

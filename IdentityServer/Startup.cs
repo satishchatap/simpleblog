@@ -7,6 +7,8 @@ namespace IdentityServer
 {
     using DummyData;
     using IdentityServer.Modules.Common;
+    using IdentityServer.Services;
+    using IdentityServer4.Services;
 
     public class Startup
     {
@@ -34,7 +36,7 @@ namespace IdentityServer
                 options.EmitStaticAudienceClaim = true;
             })
                 .AddTestUsers(AppUsers.Users);
-
+            services.AddScoped<IProfileService, ProfileService>();
             // in-memory, code config
             builder.AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiScopes(Config.ApiScopes)

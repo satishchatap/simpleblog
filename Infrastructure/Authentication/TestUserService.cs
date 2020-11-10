@@ -13,6 +13,7 @@ namespace Infrastructure.Authentication
         /// <inheritdoc />
         public string GetCurrentUserId() => SeedData.DefaultAuthor;
 
+        /// <inheritdoc />
         public string[] GetCurrentUserPermissions()=> SeedData.DefaultPermission;
     }
 }

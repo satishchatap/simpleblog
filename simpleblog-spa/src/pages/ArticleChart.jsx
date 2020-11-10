@@ -5,9 +5,6 @@ import articlesService from "../store/articlesService";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Divider from "@material-ui/core/Divider";
-import { LineChart, Line, XAxis, YAxis, Label } from 'recharts';
-
-import { grey, green, blueGrey } from "@material-ui/core/colors";
 
 class ArticleChart extends React.Component {
   static displayName = ArticleChart.name;
@@ -38,36 +35,40 @@ class ArticleChart extends React.Component {
   }
 
   render() {
+    var Chartist = require("chartist");
+    var labelVal=[];
+    var seriesVal=[];
+    for (var i in this.state.articles) {
+        labelVal.push(this.state.articles[i].articleId);
+        seriesVal.push(this.state.articles[i].likeCount);
+      }
+    
+    var data = {
+        labels: labelVal,
+        series: [
+          seriesVal
+        ]
+      };
+ 
    
-const articles = this.state.articles;
+    new Chartist.Line('.ct-chart', data, {
+        low: 0,
+            chartPadding: {
+              top: 40,
+              right: 0,
+              bottom: 0,
+              left: 0
+            },
+        showArea: true
+      });
     return (
       <Card>
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
-            Likes by Article
-        </Typography>
+            Likes by Articles
+          </Typography>
           <Divider />
-                <LineChart
-                  data={articles}
-                  margin={{
-                    top: 16,
-                    right: 16,
-                    bottom: 0,
-                    left: 24,
-                  }}
-                >
-                  <XAxis dataKey="articleId" stroke={blueGrey}/>
-                  <YAxis >
-                    <Label
-                      angle={270}
-                      position="left"
-                      style={{ textAnchor: 'middle', fill: grey }}
-                    >
-                      Likes
-                    </Label>
-                  </YAxis>
-                  <Line type="monotone" dataKey="likeCount"  stroke={green} dot={false} />
-                </LineChart>
+          <div className="ct-chart"></div>
         </CardContent>
       </Card>
 

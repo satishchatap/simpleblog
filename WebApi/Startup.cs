@@ -34,6 +34,7 @@ namespace WebApi
                 .AddSQLServer(this.Configuration)
                 .AddHealthChecks(this.Configuration)
                 .AddAuthentication(this.Configuration)
+                .AddAuthorization(this.Configuration)
                 .AddVersioning()
                 .AddSwagger()
                 .AddUseCases()

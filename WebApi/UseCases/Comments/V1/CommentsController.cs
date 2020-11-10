@@ -55,7 +55,8 @@ namespace WebApi.UseCases.Comments.V1
         /// <param name="articleId">Article Id.</param>
         /// <param name="description">description.</param>
         /// <returns>The Comment.</returns>
-        [Authorize]
+
+        [Authorize(Policy = "AnyAccess")]
         [HttpPatch("{articleId:guid}/Comment")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommentResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.Patch))]

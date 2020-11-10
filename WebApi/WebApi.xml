@@ -131,6 +131,16 @@
                 Add Authentication Extensions.
             </summary>
         </member>
+        <member name="T:WebApi.Modules.Common.AuthorizationExtensions">
+            <summary>
+                Authorization Extensions.
+            </summary>
+        </member>
+        <member name="M:WebApi.Modules.Common.AuthorizationExtensions.AddAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Add Authorization Extensions.
+            </summary>
+        </member>
         <member name="T:WebApi.Modules.Common.CustomApiConventions">
             <summary>
             </summary>
@@ -304,6 +314,11 @@
         <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.GetAllArticles">
             <summary>
             Get All Articles
+            </summary>
+        </member>
+        <member name="F:WebApi.Modules.Common.FeatureFlags.CustomFeature.Authorization">
+            <summary>
+                Use authorization
             </summary>
         </member>
         <member name="T:WebApi.Modules.Common.FeatureFlags.FeatureFlagsExtensions">

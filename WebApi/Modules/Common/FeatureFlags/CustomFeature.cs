@@ -73,6 +73,11 @@ namespace WebApi.Modules.Common.FeatureFlags
         /// <summary>
         /// Get All Articles
         /// </summary>
-        GetAllArticles
+        GetAllArticles,
+
+        /// <summary>
+        ///     Use authorization
+        /// </summary>
+        Authorization
     }
 }
